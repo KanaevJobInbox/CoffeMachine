@@ -1,0 +1,26 @@
+﻿<Window x:Class="CoffeMachine.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:myUC="clr-namespace:CoffeMachine.View.UC"
+        Title="MainWindow" Height="420" Width="509">
+    <Grid>
+
+        <TabControl TabStripPlacement="Top">
+            <TabItem Header="CoffeMachine"  Visibility="Collapsed">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <myUC:CoffeMachine DataContext="{Binding viewCoffeMachine}" />
+                    <myUC:Client Grid.Column="1" Grid.RowSpan="2" DataContext="{Binding viewClient}" />
+                </Grid>
+            </TabItem>
+
+            <TabItem  Header="Settings" Visibility="Collapsed" >
+                
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
